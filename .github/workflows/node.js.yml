@@ -35,7 +35,7 @@ jobs:
           git commit -m "Update deployment.yaml with new Docker image [skip ci]"
 
       - name: Push changes
-        uses: ad-m/github-push-action@v0.7
+        uses: ad-m/github-push-action@latest
         with:
           branch: ${{ github.ref }}
           github_token: ${{ secrets.GITHUB_PAT }}
