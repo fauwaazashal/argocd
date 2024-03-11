@@ -32,7 +32,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           
       - name: Repository Dispatch
-        uses: farhatjabeen/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.PAT }}
           repository: ${{ github.actor }}/react-dep
