@@ -28,6 +28,9 @@ jobs:
           context: .
           push: true
           tags: ${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
