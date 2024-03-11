@@ -6,8 +6,8 @@ COPY . .
 
 RUN npm i
 
-RUN npm run build
+RUN cd src/
 
 EXPOSE 3000
 
-CMD ["npm","start"]
+CMD ["node", "App.js"]
