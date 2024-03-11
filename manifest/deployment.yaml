@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: react-dep
+  name: react-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-dep
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: react-dep
+    spec:
+      containers:
+      - image: Docker-Image
+        name: react-dep
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-dep
+  labels:
+    app: react-dep
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 30001
+    port: 80
+    targetPort: 3000
+  selector:
+    app: react-dep
