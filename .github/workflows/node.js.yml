@@ -33,9 +33,8 @@ jobs:
       
       - name: Update deployment.yaml
         run: |
-          # Replace the image in deployment.yaml with the new image
-          sed -i.bak "s|farhat18/react-dep.*|${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}|" deployment.yaml
-          #sed -i "s+farhat18/react-dep.*+tanmay238/images:app-$RUN_NUMBER+g" deployment.yaml
+          sed -i.bak "s|Docker-Image|${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}|g" deployment.yaml
+        
           cat deployment.yaml
       - name: Commit changes
         run: |
@@ -52,7 +51,7 @@ jobs:
        # uses: ad-m/github-push-action@latest
       #  with:
        #   branch: ${{ github.ref }}
-        #  github_token: ${{ secrets.GITHUB_PAT }}
+        #  github_token: ${{ secrets.GITHUB_PAT }} farhat18/react-dep.*
 
 
      # - name: Update Deployment YAML
