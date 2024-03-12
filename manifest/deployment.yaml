@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: react-dep
-        image: farhat18/react-dep:40
+        image: farhat18/react-dep:42
         ports:
         - containerPort: 80
 ---
