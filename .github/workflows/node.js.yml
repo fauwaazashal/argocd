@@ -38,6 +38,8 @@ jobs:
           cat deployment.yaml
       - name: Commit changes
         run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git add deployment.yaml
           git commit -m "Update deployment.yaml with new Docker image [skip ci]"
           git push origin HEAD:${{ github.ref }}
