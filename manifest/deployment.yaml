@@ -18,7 +18,7 @@ spec:
         app: react-dep
     spec:
       containers:
-      - image: farhat18/react-dep:38
+      - image: farhat18/react-dep:39
         name: react-dep
         port: 3000
         resources: {}
