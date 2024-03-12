@@ -42,10 +42,11 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add deployment.yaml
           git commit -m "Update deployment.yaml with new Docker image [skip ci]"
-          git push origin master
+          git push origin HEAD:${{ github.ref }}
         env:
-          GIT_USERNAME: farhatjabeen
-          GIT_PASSWORD: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #GIT_USERNAME: farhatjabeen
+          #GIT_PASSWORD: ${{ secrets.PAT }}
 
       #- name: Push changes
        # uses: ad-m/github-push-action@latest
