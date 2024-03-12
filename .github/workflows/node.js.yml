@@ -45,7 +45,7 @@ jobs:
           git push origin master
         env:
           GIT_USERNAME: farhatjabeen
-          GIT_PASSWORD: Farhat@200218
+          GIT_PASSWORD: ${{ secrets.PAT }}
 
       #- name: Push changes
        # uses: ad-m/github-push-action@latest
