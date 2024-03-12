@@ -18,7 +18,7 @@ spec:
         app: react-dep
     spec:
       containers:
-      - image: farhat18/react-dep:3431
+      - image: farhat18/react-dep:35
         name: react-dep
         resources: {}
 status: {}
