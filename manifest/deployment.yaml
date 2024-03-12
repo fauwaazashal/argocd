@@ -20,6 +20,7 @@ spec:
       containers:
       - image: farhat18/react-dep:38
         name: react-dep
+        port: 3000
         resources: {}
 status: {}
 ---
