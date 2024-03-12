@@ -34,7 +34,7 @@ jobs:
       - name: Update deployment.yaml
         run: |
           # Replace the image in deployment.yaml with the new image
-          sed -i "s|farhat18/react-dep.* |${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}|" deployment.yaml
+          sed -i.bak "s|farhat18/react-dep.*|${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}|" deployment.yaml
           #sed -i "s+farhat18/react-dep.*+tanmay238/images:app-$RUN_NUMBER+g" deployment.yaml
           cat deployment.yaml
       - name: Commit changes
