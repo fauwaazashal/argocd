@@ -33,16 +33,14 @@ jobs:
       
       - name: Update deployment.yaml
         run: |
-          sed -i.bak "s|Docker-Image|farhat18/${{ env.IMAGE_NAME }}:${{ github.run_number }}|g" deployment.yaml
+          sed -i.bak "s|farhat18/react-dep.*|farhat18/${{ env.IMAGE_NAME }}:${{ github.run_number }}|g" manifest/deployment.yaml
         
-          cat deployment.yaml
-          sudo git remote -v
-          sudo git branch 
+          cat deployment.yaml 
       - name: Commit changes
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add deployment.yaml
+          git add .
           git commit -m "Update deployment.yaml with new Docker image [skip ci]"
           git push origin HEAD:${{ github.ref }}
         env:
