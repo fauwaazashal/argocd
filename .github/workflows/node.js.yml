@@ -36,6 +36,8 @@ jobs:
           sed -i.bak "s|Docker-Image|farhat18/${{ env.IMAGE_NAME }}:${{ github.run_number }}|g" deployment.yaml
         
           cat deployment.yaml
+          sudo git remote -v
+          sudo git branch 
       - name: Commit changes
         run: |
           git config --local user.email "actions@github.com"
