@@ -33,9 +33,9 @@ jobs:
       
       - name: Update deployment.yaml
         run: |
-          sed -i "s|Docker-Image|farhat18/${{ env.IMAGE_NAME }}:${{ github.run_number }}|g" manifest/deployment.yaml
+          sed -i.bak "s|Docker-Image|farhat18/${{ env.IMAGE_NAME }}:${{ github.run_number }}|g" manifest/deployment.yaml
         
-          cat deployment.yaml 
+          cat manifest/deployment.yaml 
       - name: Commit changes
         run: |
           git config --local user.email "actions@github.com"
