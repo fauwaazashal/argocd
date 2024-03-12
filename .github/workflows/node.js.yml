@@ -33,7 +33,7 @@ jobs:
       
       - name: Update deployment.yaml
         run: |
-          sed -i.bak "s|Docker-Image|${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.run_number }}|g" deployment.yaml
+          sed -i.bak "s|Docker-Image|farhat18/${{ env.IMAGE_NAME }}:${{ github.run_number }}|g" deployment.yaml
         
           cat deployment.yaml
       - name: Commit changes
@@ -44,7 +44,7 @@ jobs:
           git commit -m "Update deployment.yaml with new Docker image [skip ci]"
           git push origin master
         env:
-          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_USERNAME: farhatjabeen
           GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
 
       #- name: Push changes
